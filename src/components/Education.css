@@ -1,0 +1,91 @@
+.education {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+}
+
+.education-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.education-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+}
+
+.education-icon {
+  font-size: 4rem;
+  color: var(--accent-blue);
+  flex-shrink: 0;
+}
+
+.education-details {
+  flex: 1;
+}
+
+.education-degree {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.education-institution {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.education-info {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.education-date,
+.education-cgpa {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .education {
+    padding: 60px 0;
+  }
+
+  .education-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .education-icon {
+    font-size: 3rem;
+  }
+
+  .education-degree {
+    font-size: 1.5rem;
+  }
+
+  .education-institution {
+    font-size: 1.1rem;
+  }
+
+  .education-info {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .education-date,
+  .education-cgpa {
+    font-size: 1rem;
+  }
+}

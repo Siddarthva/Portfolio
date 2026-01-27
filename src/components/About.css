@@ -1,0 +1,31 @@
+.about {
+  padding: 100px 0;
+  background: var(--bg-primary);
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 0;
+  }
+
+  .about-content {
+    padding: 2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+}
