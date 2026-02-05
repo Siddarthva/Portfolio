@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import './Projects.css';
 
@@ -15,7 +16,7 @@ const Projects = () => {
       ],
       github: 'https://github.com/Siddarthva',
       demo: '#',
-      //image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
       title: 'BloodLink – Blood Donation Platform',
@@ -28,7 +29,7 @@ const Projects = () => {
       ],
       github: 'https://github.com/Siddarthva',
       demo: '#',
-      //image: 'https://images.pexels.com/photos/6823567/pexels-photo-6823567.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/6823567/pexels-photo-6823567.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
       title: 'Lend a Hand – Service Booking App',
@@ -41,7 +42,7 @@ const Projects = () => {
       ],
       github: 'https://github.com/Siddarthva',
       demo: '#',
-      //image: 'https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
       title: 'AlgoVisualizer',
@@ -54,7 +55,21 @@ const Projects = () => {
       ],
       github: 'https://github.com/Siddarthva',
       demo: '#',
-      //image: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800',
+    },
+    {
+      title: 'Resume Analyzer Pro',
+      description: 'AI-powered resume analysis tool providing instant ATS scoring and detailed feedback for job seekers.',
+      tech: ['React', 'AI Integration', 'Tailwind CSS'],
+      features: [
+        'Instant ATS Score generation',
+        'Keyword gap analysis',
+        'Actionable improvement suggestions',
+        'PDF resume parsing',
+      ],
+      github: 'https://github.com/Siddarthva',
+      demo: 'https://resume-analyzer-jrjg5o1t0-siddarths-projects-f72c4c95.vercel.app/',
+      image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800', 
     },
   ];
 
