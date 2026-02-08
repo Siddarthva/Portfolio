@@ -54,7 +54,7 @@ const Projects = () => {
         'Speed control',
       ],
       github: 'https://github.com/Siddarthva',
-      demo: '#',
+      demo: 'https://algo-viz-gamma-flame.vercel.app/',
       //image: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
