@@ -71,6 +71,22 @@ const Projects = () => {
       demo: 'https://resume-analyzer-jrjg5o1t0-siddarths-projects-f72c4c95.vercel.app/',
       image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800', 
     },
+    {
+      title: '2048 – Neon Edition',
+      description: 'A modern neon-themed remake of the classic 2048 puzzle game with smooth animations, responsive design, and keyboard controls.',
+      tech: ['React', 'Vite', 'JavaScript', 'CSS'],
+      features: [
+        'Neon dark-mode UI',
+        'Smooth tile animations',
+        'Keyboard and touch support',
+        'Responsive across devices',
+        'Optimized game logic',
+      ],
+      github: 'https://github.com/Siddarthva',
+      demo: 'https://2048-game-umber-six.vercel.app/',
+      image: '/projects/2048-neon-preview.png',
+  }
+,
   ];
 
   return (
