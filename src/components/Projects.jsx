@@ -41,7 +41,7 @@ const Projects = () => {
         '50+ mock transactions',
       ],
       github: 'https://github.com/Siddarthva',
-      demo: '#',
+      demo: 'https://lend-a-hand-two.vercel.app/',
       //image: 'https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
