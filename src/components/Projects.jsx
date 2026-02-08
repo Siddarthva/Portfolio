@@ -16,7 +16,7 @@ const Projects = () => {
       ],
       github: 'https://github.com/Siddarthva',
       demo: '#',
-      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
+      //image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
       title: 'BloodLink – Blood Donation Platform',
@@ -29,7 +29,7 @@ const Projects = () => {
       ],
       github: 'https://github.com/Siddarthva',
       demo: '#',
-      image: 'https://images.pexels.com/photos/6823567/pexels-photo-6823567.jpeg?auto=compress&cs=tinysrgb&w=800',
+      //image: 'https://images.pexels.com/photos/6823567/pexels-photo-6823567.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
       title: 'Lend a Hand – Service Booking App',
@@ -42,7 +42,7 @@ const Projects = () => {
       ],
       github: 'https://github.com/Siddarthva',
       demo: '#',
-      image: 'https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=800',
+      //image: 'https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
       title: 'AlgoVisualizer',
@@ -55,7 +55,7 @@ const Projects = () => {
       ],
       github: 'https://github.com/Siddarthva',
       demo: '#',
-      image: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800',
+      //image: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
       title: 'Resume Analyzer Pro',
@@ -69,7 +69,7 @@ const Projects = () => {
       ],
       github: 'https://github.com/Siddarthva',
       demo: 'https://resume-analyzer-jrjg5o1t0-siddarths-projects-f72c4c95.vercel.app/',
-      image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800', 
+      //image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800', 
     },
     {
       title: '2048 – Neon Edition',
@@ -84,7 +84,7 @@ const Projects = () => {
       ],
       github: 'https://github.com/Siddarthva',
       demo: 'https://2048-game-umber-six.vercel.app/',
-      image: '/projects/2048-neon-preview.png',
+      //image: '/projects/2048-neon-preview.png',
   }
 ,
   ];
