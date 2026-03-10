@@ -1,91 +1,143 @@
 .education {
-  padding: 100px 0;
-  background: var(--bg-secondary);
+  padding: 120px 0;
+  background: var(--bg-elevated);
 }
 
-.education-content {
-  max-width: 800px;
+.edu-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 700px;
   margin: 0 auto;
+  padding-left: 50px;
 }
 
-.education-card {
+/* Static track + animated progress fill */
+.timeline-track {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.timeline-progress {
+  width: 100%;
+  background: var(--gradient);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(129, 140, 248, 0.4);
+  will-change: height;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-muted);
+  border: 2px solid var(--accent);
   display: flex;
   align-items: center;
-  gap: 2rem;
-  padding: 3rem;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 1rem;
+  z-index: 1;
 }
 
-.education-icon {
-  font-size: 4rem;
-  color: var(--accent-blue);
-  flex-shrink: 0;
+.timeline-card {
+  padding: 2.5rem;
 }
 
-.education-details {
-  flex: 1;
-}
-
-.education-degree {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--text-primary);
-}
-
-.education-institution {
-  font-size: 1.3rem;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-}
-
-.education-info {
+.edu-top {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.edu-top h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.edu-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.3rem 0.9rem;
+  background: var(--accent-muted);
+  color: var(--accent);
+  border-radius: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.edu-institution {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.edu-meta {
+  display: flex;
+  gap: 1.5rem;
   flex-wrap: wrap;
   align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
 }
 
-.education-date,
-.education-cgpa {
+.edu-meta span {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.1rem;
-  color: var(--accent-cyan);
-  font-weight: 600;
+  gap: 0.4rem;
+}
+
+.edu-cgpa {
+  color: var(--accent-2);
 }
 
 @media (max-width: 768px) {
   .education {
-    padding: 60px 0;
+    padding: 80px 0;
   }
 
-  .education-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem;
+  .timeline {
+    padding-left: 40px;
   }
 
-  .education-icon {
-    font-size: 3rem;
+  .timeline-track {
+    left: 15px;
   }
 
-  .education-degree {
-    font-size: 1.5rem;
+  .timeline-dot {
+    left: -40px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
   }
 
-  .education-institution {
-    font-size: 1.1rem;
+  .timeline-card {
+    padding: 1.5rem;
   }
 
-  .education-info {
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .education-date,
-  .education-cgpa {
-    font-size: 1rem;
+  .edu-top h3 {
+    font-size: 1.2rem;
   }
 }

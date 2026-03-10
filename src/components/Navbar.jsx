@@ -1,46 +1,57 @@
 import { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
+import { useTheme } from '../context/ThemeContext';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
+  const go = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMobileOpen(false);
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <div className="logo" onClick={() => scrollToSection('hero')}>
+        <div className="logo" onClick={() => go('hero')}>
           SV<span className="logo-accent">A</span>
         </div>
 
-        <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          <li><button onClick={() => scrollToSection('about')}>About</button></li>
-          <li><button onClick={() => scrollToSection('skills')}>Skills</button></li>
-          <li><button onClick={() => scrollToSection('projects')}>Projects</button></li>
-          <li><button onClick={() => scrollToSection('education')}>Education</button></li>
-          <li><button onClick={() => scrollToSection('certifications')}>Certifications</button></li>
-          <li><button onClick={() => scrollToSection('contact')}>Contact</button></li>
+        <ul className={`nav-menu ${mobileOpen ? 'open' : ''}`}>
+          {['about', 'skills', 'projects', 'education', 'certifications', 'contact'].map((id) => (
+            <li key={id}>
+              <button onClick={() => go(id)}>
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </button>
+            </li>
+          ))}
         </ul>
 
-        <div className="mobile-menu-icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        <div className="nav-actions">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <FaSun /> : <FaMoon />}
+          </button>
+
+          <button
+            className="mobile-toggle"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
       </div>
     </nav>

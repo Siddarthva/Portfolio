@@ -1,31 +1,133 @@
 .about {
-  padding: 100px 0;
-  background: var(--bg-primary);
+  padding: 120px 0;
 }
 
-.about-content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem;
+.about-header {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
-.about-text {
-  font-size: 1.2rem;
-  line-height: 1.9;
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Sticky visual column */
+.about-visual-col {
+  position: relative;
+}
+
+.about-visual-sticky {
+  position: sticky;
+  top: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-img-wrap {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid var(--border);
+}
+
+.about-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-img-accent {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), transparent 60%);
+  pointer-events: none;
+}
+
+.about-visual-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 0.4rem 1.2rem;
+  background: var(--accent-muted);
+  border-radius: 20px;
+}
+
+/* Narrative blocks */
+.about-narrative-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-block {
+  padding: 2.5rem;
+  position: relative;
+  will-change: transform, opacity;
+}
+
+.about-block-active {
+  border-color: var(--accent) !important;
+}
+
+.about-block-num {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.about-block p {
+  font-size: 1.15rem;
+  line-height: 1.85;
   color: var(--text-secondary);
 }
 
-@media (max-width: 768px) {
-  .about {
-    padding: 60px 0;
+.about-block-active p {
+  color: var(--text-primary);
+}
+
+.about-block:first-child {
+  margin-top: 4rem;
+}
+
+.about-block:last-child {
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 900px) {
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  .about-content {
-    padding: 2rem;
+  .about-visual-sticky {
+    position: relative;
+    top: auto;
+    flex-direction: row;
   }
 
-  .about-text {
-    font-size: 1rem;
+  .about-img-wrap {
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+  }
+
+  .about-block:first-child {
+    margin-top: 0;
+  }
+
+  .about-block:last-child {
+    margin-bottom: 0;
   }
 }
