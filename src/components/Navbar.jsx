@@ -33,7 +33,7 @@ const Navbar = () => {
         </div>
 
         <ul className={`nav-menu ${mobileOpen ? 'open' : ''}`}>
-          {['about', 'skills', 'projects', 'education', 'certifications', 'contact'].map((id) => (
+          {['about', 'skills', 'projects', 'education', 'contact'].map((id) => (
             <li key={id}>
               <button onClick={() => go(id)}>
                 {id.charAt(0).toUpperCase() + id.slice(1)}
