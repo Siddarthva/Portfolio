@@ -15,7 +15,13 @@ const Navbar = () => {
   }, []);
 
   const go = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    const target = document.getElementById(id);
+    if (!target) return;
+    if (window.__lenis) {
+      window.__lenis.scrollTo(target, { offset: 0, duration: 1.2 });
+    } else {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
     setMobileOpen(false);
   };
 

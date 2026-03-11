@@ -1,7 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Reveal from './Reveal';
-import profileImg from '../assets/siddarth.jpg';
 import './About.css';
 
 const storyBlocks = [
@@ -10,24 +8,16 @@ const storyBlocks = [
   { label: 'Mission', text: 'Actively seeking internship opportunities in software engineering and machine learning to create technology that makes a real difference.' },
 ];
 
+const blockVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.15, ease: [0.4, 0, 0.2, 1] },
+  }),
+};
+
 const About = () => {
-  const [activeBlock, setActiveBlock] = useState(0);
-  const blockRefs = useRef([]);
-
-  // Track which story block is most visible
-  useEffect(() => {
-    const observers = blockRefs.current.map((el, i) => {
-      if (!el) return null;
-      const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveBlock(i); },
-        { threshold: 0.55, rootMargin: '-10% 0px -10% 0px' }
-      );
-      obs.observe(el);
-      return obs;
-    });
-    return () => observers.forEach((o) => o?.disconnect());
-  }, []);
-
   return (
     <section id="about" className="about">
       <div className="container">
@@ -36,48 +26,21 @@ const About = () => {
           <h2 className="section-heading">About Me</h2>
         </Reveal>
 
-        <div className="about-story">
-          {/* Sticky visual — pinned while text scrolls */}
-          <div className="about-visual-col">
-            <div className="about-visual-sticky">
-              <div className="about-img-wrap">
-                <img src={profileImg} alt="Siddarth V Acharya" />
-                <div className="about-img-accent" />
-              </div>
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeBlock}
-                  className="about-visual-label font-accent"
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  {storyBlocks[activeBlock]?.label}
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
-
-          {/* Scrolling narrative blocks */}
-          <div className="about-narrative-col">
-            {storyBlocks.map((block, i) => (
-              <motion.div
-                key={i}
-                ref={(el) => (blockRefs.current[i] = el)}
-                className={`about-block glass-card ${activeBlock === i ? 'about-block-active' : ''}`}
-                animate={{
-                  opacity: activeBlock === i ? 1 : 0.3,
-                  x: activeBlock === i ? 0 : 20,
-                  scale: activeBlock === i ? 1 : 0.97,
-                }}
-                transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
-              >
-                <span className="about-block-num font-accent">0{i + 1}</span>
-                <p>{block.text}</p>
-              </motion.div>
-            ))}
-          </div>
+        <div className="about-blocks">
+          {storyBlocks.map((block, i) => (
+            <motion.div
+              key={i}
+              className="about-block glass-card"
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+              variants={blockVariants}
+            >
+              <span className="about-block-label font-accent">{block.label}</span>
+              <p>{block.text}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

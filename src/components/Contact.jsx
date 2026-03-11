@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 import Reveal, { StaggerContainer, StaggerItem } from './Reveal';
 import './Contact.css';
 
@@ -59,6 +60,15 @@ const Contact = () => {
                   </div>
                 </a>
               </StaggerItem>
+              <StaggerItem>
+                <a href="https://leetcode.com/u/sidarthvacharyaa/" target="_blank" rel="noopener noreferrer" className="contact-card glass-card">
+                  <SiLeetcode className="contact-icon" />
+                  <div>
+                    <span className="contact-card-label font-accent">LeetCode</span>
+                    <span className="contact-card-value">sidarthvacharyaa</span>
+                  </div>
+                </a>
+              </StaggerItem>
             </StaggerContainer>
           </Reveal>
 
@@ -99,7 +109,7 @@ const Contact = () => {
       <footer className="footer font-accent">
         <p>&copy; 2024 Siddarth V Acharya. All rights reserved.</p>
       </footer>
-    </section>
+    </section >
   );
 };
 
