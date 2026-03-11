@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Education from './components/Education';
 import Contact from './components/Contact';
+import { Analytics } from "@vercel/analytics/next"
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Projects />
       <Education />
       <Contact />
+      <Analytics/>
     </div>
   );
 }
